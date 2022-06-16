@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../models/content';
+import { ChessPlayersService } from '../services/chess-players.service';
 
 @Component({
   selector: 'app-content-list',
@@ -14,12 +15,13 @@ export class ContentListComponent implements OnInit {
     found: false
   };
 
-  constructor() {
+  constructor(private contentService: ChessPlayersService) {
     this.chessPlayersList = [];
 
   }
 
   ngOnInit(): void {
+    this.content = this.contentService.getContent();
   }
   checkForAuthorInList(authorNameValue: string): void {
     if (this.chessPlayersList.some(player => player.author.toLowerCase() === authorNameValue.toLowerCase())) {
