@@ -21,7 +21,9 @@ export class ContentListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.content = this.contentService.getContent();
+    this.contentService.getContent().subscribe((contentArrayFromService: Content[]) => {
+      this.chessPlayersList = contentArrayFromService;
+    });
   }
   checkForAuthorInList(authorNameValue: string): void {
     if (this.chessPlayersList.some(player => player.author.toLowerCase() === authorNameValue.toLowerCase())) {
