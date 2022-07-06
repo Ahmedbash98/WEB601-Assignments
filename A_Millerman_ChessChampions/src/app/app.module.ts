@@ -9,6 +9,7 @@ import { HighlightImportantDataDirective } from './directives/highlight-importan
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { ContentSearchComponent } from './content-search/content-search.component';
 
 
 
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     ContentCardComponent,
     FilterChessPlayerTypePipe,
     HighlightImportantDataDirective,
-    ContentDetailComponent
+    ContentDetailComponent,
+    ContentSearchComponent
   ],
   imports: [
     BrowserModule,
