@@ -21,9 +21,16 @@ export class ContentListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.contentService.getContent().subscribe((contentArrayFromService: Content[]) => {
-      this.chessPlayersList = contentArrayFromService;
-    });
+
+      // this.chessPlayersList = this.chessChampionService.getContent();
+  
+      // getContent test
+      this.contentService.getContent().subscribe(contentArrayFromService =>
+        this.chessPlayersList = contentArrayFromService);
+      // getContentItem test
+      // this.contentService.getContentItem(1).subscribe(contentArrayFromService => {
+      //   console.log("Got the content item: ", contentArrayFromService);
+      // });
   }
   checkForAuthorInList(authorNameValue: string): void {
     if (this.chessPlayersList.some(player => player.author.toLowerCase() === authorNameValue.toLowerCase())) {
