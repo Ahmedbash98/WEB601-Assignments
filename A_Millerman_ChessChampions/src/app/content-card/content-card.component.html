@@ -1,14 +1,13 @@
 <div *ngIf="chessPlayer">
-  <header class="title" appHighlightImportantData highlightType="title" colour="cadetblue">{{ chessPlayer.title }}
+  <header class="title" appHighlightImportantData highlightType="title" colour="cadetblue">
+    <a class="content-detail-button" [routerLink]="['/list.id']" routerLinkActive="active">
+      {{ chessPlayer.title }}
+    </a>
   </header>
   <img *ngIf="chessPlayer.imageLink; else defaultChessImage" [src]="chessPlayer.imageLink"
     (click)="displayAuthorAndId()">
-  <p *ngIf="chessPlayer.body">
-    {{ chessPlayer.body }}
-  </p>
-  <div class="author" appHighlightImportantData highlightType="author" colour="dodgerblue">
-    {{ chessPlayer.author }}
-  </div>
+
+ 
   <!-- <div *ngIf="isLast; else notLastElement" class="author" appHighlightImportantData highlightType="author"
     colour="dodgerblue">{{ chessPlayer.author }}
   </div> -->
