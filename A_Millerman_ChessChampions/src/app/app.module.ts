@@ -7,6 +7,10 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { FilterChessPlayerTypePipe } from './pipes/filter-chess-player-type.pipe';
 import { HighlightImportantDataDirective } from './directives/highlight-important-data.directive';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+
+
 
 @NgModule({
   declarations: [
@@ -18,7 +22,10 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
     ContentDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
