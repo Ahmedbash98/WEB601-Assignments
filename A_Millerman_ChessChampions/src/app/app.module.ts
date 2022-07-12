@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ContentSearchComponent } from './content-search/content-search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LinksComponent } from './links/links.component';
 
 
 
@@ -23,7 +24,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HighlightImportantDataDirective,
     ContentDetailComponent,
     ContentSearchComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LinksComponent
   ],
   imports: [
     BrowserModule,
