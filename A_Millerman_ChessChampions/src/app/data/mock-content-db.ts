@@ -8,6 +8,7 @@ export const DEFAULTCHESSCONTENT: Content = {
 
 
 
+
 export const CHESSPLAYERSLIST: Content[] = [
     {
       id: 0,

@@ -1,24 +1,17 @@
 <div *ngIf="chessPlayer">
   <header class="title" appHighlightImportantData highlightType="title" colour="cadetblue">
-    <a class="content-detail-button" [routerLink]="['/list.id']" routerLinkActive="active">
-      {{ chessPlayer.title }}
-    </a>
+    <a [routerLink]="['/detail', chessPlayer.id]">{{ chessPlayer.title }}</a>
   </header>
   <img *ngIf="chessPlayer.imageLink; else defaultChessImage" [src]="chessPlayer.imageLink"
     (click)="displayAuthorAndId()">
-
- 
-  <!-- <div *ngIf="isLast; else notLastElement" class="author" appHighlightImportantData highlightType="author"
-    colour="dodgerblue">{{ chessPlayer.author }}
-  </div> -->
   <div appHighlightImportantData [highlightType]="'type'" class="type">{{ chessPlayer.type }}</div>
   <div class="hashtags" *ngIf="chessPlayer.hashtags">
     <span appHighlightImportantData highlightType="tag" *ngFor="let hashtag of chessPlayer.hashtags">
       #{{ hashtag }}
     </span>
-    <!-- <span>{{ chessPlayer.hashtags.replace(cp => "<span>" + cp + "</span>").join(" ")}}</span> -->
   </div>
 </div>
+
 
 <ng-template #defaultChessImage>
   <img alt="Default Chess Image"

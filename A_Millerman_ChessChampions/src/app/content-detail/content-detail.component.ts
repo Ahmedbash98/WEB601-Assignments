@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Content } from '../models/content';
+import { ChessPlayersService } from '../services/chess-players.service';
 
 @Component({
   selector: 'app-content-detail',
@@ -7,20 +9,21 @@ import { Content } from '../models/content';
   styleUrls: ['./content-detail.component.scss']
 })
 export class ContentDetailComponent implements OnInit {
-  @Input() chessPlayer?: Content;
-  @Input() isLast?: boolean;
+  id?: number;
+  individualChessPlayer?: Content;
 
-  constructor() {
-
-  }
+  constructor(private route: ActivatedRoute,
+    private chessPlayersService: ChessPlayersService) { }
 
   ngOnInit(): void {
-    if (this.chessPlayer) {
-      console.log("value of chess player: ", this.chessPlayer.title);
-    }
-  }
-  displayAuthorAndId(): void {
-    console.log("Chess Player Author: ", this.chessPlayer?.author, ", Chess Player ID: ", this.chessPlayer?.id);
+    this.route.paramMap.subscribe((params) => {
+      this.id = Number(params.get("id") ?? 0);
+
+      this.chessPlayersService.getContentItem(this.id)
+        .subscribe((individualChessPlayer) => {
+          this.individualChessPlayer = individualChessPlayer;
+        });
+    });
   }
 
 }

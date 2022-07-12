@@ -10,6 +10,7 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ContentSearchComponent } from './content-search/content-search.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -21,7 +22,8 @@ import { ContentSearchComponent } from './content-search/content-search.componen
     FilterChessPlayerTypePipe,
     HighlightImportantDataDirective,
     ContentDetailComponent,
-    ContentSearchComponent
+    ContentSearchComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
