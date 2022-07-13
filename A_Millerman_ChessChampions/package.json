@@ -12,7 +12,7 @@
     "generatecomponent": "ng g component",
     "generatepipe": "ng g pipe",
     "generatedirective": "ng g d",
-    "generateservice" : "ng g s"
+    "generateservice": "ng g s"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +24,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "angular-in-memory-web-api": "^0.13.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

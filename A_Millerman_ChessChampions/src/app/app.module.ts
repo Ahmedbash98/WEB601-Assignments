@@ -13,6 +13,10 @@ import { ContentSearchComponent } from './content-search/content-search.componen
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LinksComponent } from './links/links.component';
 
+import { HttpClientModule } from "@angular/common/http";
+import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
+import { InMemoryDataService } from "./services/in-memory-data.service";
+
 
 
 @NgModule({
@@ -30,7 +34,12 @@ import { LinksComponent } from './links/links.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {
+      delay: 1000,
+    }),
 
   ],
   providers: [],
