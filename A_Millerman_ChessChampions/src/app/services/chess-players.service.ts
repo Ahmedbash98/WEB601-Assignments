@@ -18,24 +18,24 @@ export class ChessPlayersService {
   constructor(private http: HttpClient) { }
 
   getContent(): Observable<Content[]> {
-    return this.http.get<Content[]>("/api/chess");
+    return this.http.get<Content[]>("/api/content");
   }
 
   // C
   addContentItem(newContent: Content): Observable<Content> {
-    return this.http.post<Content>("/api/chess", newContent, this.httpOptions)
+    return this.http.post<Content>("/api/content", newContent, this.httpOptions)
   }
 
   // R
   getContentItem(id: number): Observable<Content> {
     console.log("Now getting it from the server!");
-    return this.http.get<Content>("/api/chess/" + id);
+    return this.http.get<Content>("/api/content/" + id);
   }
 
   // U
   // content item needs to have the id set correctly
   updateContent(contentItem: Content): Observable<any> {
-    return this.http.put<any>("api/chess", contentItem, this.httpOptions);
+    return this.http.put<any>("api/content", contentItem, this.httpOptions);
   }
 
   // D

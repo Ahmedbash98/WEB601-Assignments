@@ -26,10 +26,4 @@
       src="https://images.chesscomfiles.com/uploads/v1/blog/291978.333e4ddb.668x375o.576e795e2298@2x.png">
   </ng-template>
 
-  <div class="buttons-wrapper">
-    <a routerLink="/list">Back to list</a>
-    <a *ngIf="individualChessPlayer.id > 0" [routerLink]="['/detail', individualChessPlayer.id - 1]">
-      Previous player
-    </a>
-  </div>
 </div>

@@ -16,6 +16,7 @@ import { LinksComponent } from './links/links.component';
 import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./services/in-memory-data.service";
+import { ChangeContentComponent } from './change-content/change-content.component';
 
 
 
@@ -29,7 +30,8 @@ import { InMemoryDataService } from "./services/in-memory-data.service";
     ContentDetailComponent,
     ContentSearchComponent,
     PageNotFoundComponent,
-    LinksComponent
+    LinksComponent,
+    ChangeContentComponent
   ],
   imports: [
     BrowserModule,
