@@ -25,7 +25,7 @@
     <input [(ngModel)]="tempTags">
   </label>
 <label>
-    <button  (click)="addContentToServer()">
-        Add Content
-    </button>
+    <button (click)="+(contentItem.id || 'falsy') ? updateContentOnServer(): addContentToServer() ">
+        Add new content
+      </button>
  </label>

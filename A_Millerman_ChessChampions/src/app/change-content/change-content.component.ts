@@ -28,5 +28,13 @@ export class ChangeContentComponent implements OnInit {
         console.log("Success! New content added", newContentFromServer)
       );
   }
+
+  updateContentOnServer(): void {
+    this.contentItem.hashtags = this.tempTags.split(", ");
+    this.chessplayersService.updateContent(this.contentItem)
+      .subscribe(() =>
+        console.log("Content updated successfully", this.contentItem)
+      );
  
+  }
 }
