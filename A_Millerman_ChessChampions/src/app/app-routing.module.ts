@@ -28,7 +28,11 @@ const routes: Routes = [
   {
     path: "addContent",
     component: ChangeContentComponent
-  },  
+  }, 
+  {
+    path: "updateContent/:id",
+    component: ChangeContentComponent
+  }, 
   {
     path: "**",
     component: PageNotFoundComponent
