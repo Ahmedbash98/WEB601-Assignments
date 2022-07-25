@@ -17,6 +17,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./services/in-memory-data.service";
 import { ChangeContentComponent } from './change-content/change-content.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -42,6 +43,7 @@ import { ChangeContentComponent } from './change-content/change-content.componen
       InMemoryDataService, {
       delay: 1000,
     }),
+    BrowserAnimationsModule,
 
   ],
   providers: [],
