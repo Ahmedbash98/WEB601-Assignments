@@ -1,31 +1,34 @@
-<h1>Add New Content</h1>
+ <h1>Add New Content</h1>
 
-  <label>
-    Name:
-    <input [(ngModel)]="contentItem.title">
-  </label>
-  <label>
-    Type:
-    <input [(ngModel)]="contentItem.type">
-  </label>
-  <label>
-    Author:
-    <input [(ngModel)]="contentItem.author">
-  </label>
-  <label>
-    Image URL:
-    <input [(ngModel)]="contentItem.imageLink">
-  </label>
-  <label>
-    Body:
-    <textarea [(ngModel)]="contentItem.body"></textarea>
-  </label>
-  <label>
-    Tags:
-    <input [(ngModel)]="tempTags">
-  </label>
-<label>
-    <button (click)="+(contentItem.id || 'falsy') ? updateContentOnServer(): addContentToServer() ">
-        Add new content
-      </button>
- </label>
+
+
+
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Name</mat-label>
+  <input matInput  [(ngModel)]="contentItem.title">
+</mat-form-field>
+
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Author</mat-label>
+  <input matInput  [(ngModel)]="contentItem.author">
+</mat-form-field>
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Type</mat-label>
+  <input matInput [(ngModel)]="contentItem.type">
+</mat-form-field>
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Image URL</mat-label>
+  <input matInput [(ngModel)]="contentItem.imageLink">
+</mat-form-field>
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Body</mat-label>
+  <input matInput [(ngModel)]="contentItem.body">
+</mat-form-field>
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Tags</mat-label>
+  <input matInput [(ngModel)]="tempTags">
+</mat-form-field>
+<button mat-raised-button color="primary"
+  (click)="+(contentItem.id || 'falsy') ? updateContentOnServer(): addContentToServer() ">
+  Add new content
+</button>
