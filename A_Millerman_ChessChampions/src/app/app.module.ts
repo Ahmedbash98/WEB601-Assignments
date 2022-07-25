@@ -20,6 +20,7 @@ import { ChangeContentComponent } from './change-content/change-content.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -47,7 +48,8 @@ import { MatInputModule } from '@angular/material/input';
     }),
     BrowserAnimationsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
 
   ],
   providers: [],

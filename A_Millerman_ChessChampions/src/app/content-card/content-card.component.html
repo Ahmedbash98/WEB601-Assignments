@@ -1,7 +1,11 @@
+<!-- <mat-card class="example-card">
 <div *ngIf="chessPlayer">
   <header class="title" appHighlightImportantData highlightType="title" colour="cadetblue">
     <a [routerLink]="['/detail', chessPlayer.id]">{{ chessPlayer.title }}</a>
+    <mat-card-title>Shiba Inu</mat-card-title>
+
   </header>
+
   <img *ngIf="chessPlayer.imageLink; else defaultChessImage" [src]="chessPlayer.imageLink"
     (click)="displayAuthorAndId()">
   <div appHighlightImportantData [highlightType]="'type'" class="type">{{ chessPlayer.type }}</div>
@@ -10,7 +14,8 @@
       #{{ hashtag }}
     </span>
   </div>
-</div>
+</div> -->
+
 
 
 <ng-template #defaultChessImage>
@@ -23,3 +28,23 @@
     {{ chessPlayer?.author }}
   </div>
 </ng-template>
+
+
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title><a [routerLink]="['/detail', chessPlayer?.id]">{{ chessPlayer?.title }}</a></mat-card-title>
+  </mat-card-header>
+  <img *ngIf="chessPlayer?.imageLink; else defaultChessImage" [src]="chessPlayer?.imageLink"
+    (click)="displayAuthorAndId()">
+  <mat-card-content>
+    <div appHighlightImportantData [highlightType]="'type'" class="type">{{ chessPlayer?.type }}</div>
+    <div class="hashtags" *ngIf="chessPlayer?.hashtags">
+      <span appHighlightImportantData highlightType="tag" *ngFor="let hashtag of chessPlayer?.hashtags">
+        #{{ hashtag }}
+      </span>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
